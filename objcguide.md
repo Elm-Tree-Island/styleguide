@@ -5,10 +5,13 @@
 > easy to use and read, while enabling sophisticated object-oriented design. It
 > is the primary development language for applications on OS X and on iOS.
 >
+> Objective-C是基于C语言的动态化、面向对象程序设计语言。它被设计的易读易使用，同时支持复杂的面向对象程序设计。Objective-C是OS X和iOS应用程序开发的首选语言。
+>
 > Apple has already written a very good, and widely accepted, [Cocoa Coding
 > Guidelines](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/CodingGuidelines/CodingGuidelines.html)
 > for Objective-C. Please read it in addition to this guide.
 >
+> 苹果公司已经为Objective-C撰写了优秀且被广泛接受的 [Cocoa开发代码规范](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/CodingGuidelines/CodingGuidelines.html)，除本文档外，可以参考上述文档。
 >
 > The purpose of this document is to describe the Objective-C (and
 > Objective-C++) coding guidelines and practices that should be used for iOS and
@@ -16,15 +19,21 @@
 > projects and teams.
 > Open-source projects developed by Google conform to the requirements in this guide.
 >
+> 本文档用于描述在用于iOS和OS X程序开发时，Objective-C (Objective-C++)语言的代码规范和最佳实践。该规范已经被其他项目和团队广泛使用并被时间验证。Google的开源项目均采用该代码开发规范。
+>
 > Note that this guide is not an Objective-C tutorial. We assume that the reader
 > is familiar with the language. If you are new to Objective-C or need a
 > refresher, please read [Programming with
 > Objective-C](https://developer.apple.com/library/mac/#documentation/Cocoa/Conceptual/ProgrammingWithObjectiveC/Introduction/Introduction.html).
+>
+> 注意本文档不是Objective-C语言教程。我们假设读者已经熟知Objective-C开发语言。如果你是Objective-C新人或需要复习该语言，请阅读[Programming with Objective-C](https://developer.apple.com/library/mac/#documentation/Cocoa/Conceptual/ProgrammingWithObjectiveC/Introduction/Introduction.html)。
 
 
-## Principles
 
-### Optimize for the reader, not the writer
+
+## 原则（Principles）
+
+### 关注读者，而非作者（Optimize for the reader, not the writer）
 
 Codebases often have extended lifetimes and more time is spent reading the code
 than writing it. We explicitly choose to optimize for the experience of our
@@ -33,7 +42,9 @@ codebase rather than the ease of writing said code. For example, when something
 surprising or unusual is happening in a snippet of code, leaving textual hints
 for the reader is valuable.
 
-### Be consistent
+阅读代码库中的代码的时间往往远大于书写的时间。我们很明确的选择优化普通软件开发工程师对于代码阅读、维护和调试的体验，而不是写出简易（指简陋甚至）的代码。例如，当对于一小段代码会让人感到惊奇或不寻常时，给读者书写一段文本注释或说明是非常可贵的。
+
+### 保持一致性 （Be consistent）
 
 When the style guide allows multiple options it is preferable to pick one option
 over mixed usage of multiple options. Using one style consistently throughout a
@@ -44,7 +55,9 @@ rules that are attributed to "Be Consistent" boil down to "Just pick one and
 stop worrying about it"; the potential value of allowing flexibility on these
 points is outweighed by the cost of having people argue over them.
 
-### Be consistent with Apple SDKs
+当编码风格规范中提供规范供选择时，选择一种规范要优于多种规范混用。代码库中使用一致的规范，会帮助工程师节省时间，将精力放在其他更重要的事情上（指减少因为编码规范不统一导致的各种误解）。由于一致的代码风格可以高效的开发和使用工具组件，所以，一致性也可以提高自动化程度。在很多场景中，保持一致性可以归结为“（快速）选一个，然后就不要再担心它”，这种选择的灵活性做法，对比花费更多时间争论选择哪种规范来使用，更具潜在价值。
+
+### 与Apple SDKs保持一致（Be consistent with Apple SDKs）
 
 Consistency with the way Apple SDKs use Objective-C has value for the same
 reasons as consistency within our code base. If an Objective-C feature solves a
@@ -53,7 +66,9 @@ and idioms are flawed, or were just designed with assumptions that are not
 universal. In those cases it is appropriate to constrain or ban language
 features or idioms.
 
-### Style rules should pull their weight
+与上面说的保持一致性一样，与苹果Objective-C SDKs保持一致性同样具有价值。如果一个Objective-C的功能特性解决了一个由于参数使用导致的问题。然而，有时语言的特性和惯用语法是有缺陷的，或者本来就被设计的不是通用的。此时，避免或者禁用这些特性或惯用语法往往更好。
+
+### Style rules(编码规范) should pull their weight
 
 The benefit of a style rule must be large enough to justify asking engineers to
 remember it. The benefit is measured relative to the codebase we would get
