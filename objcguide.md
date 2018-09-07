@@ -78,13 +78,19 @@ explains the rules we don’t have, rather than the rules we do: for example, go
 contravenes many of the following principles, but is not discussed due to its
 extreme rarity.
 
-## Example 
+
+
+## 示例 (Example) 
 
 They say an example is worth a thousand words, so let's start off with an
 example that should give you a feel for the style, spacing, naming, and so on.
 
 Here is an example header file, demonstrating the correct commenting and spacing
 for an `@interface` declaration.
+
+俗话说，一个例子胜过千言万语，所以我们举个例子，来初步感受一下编码风格、空格空行布局、命名等等编码规范。
+
+下面头文件的例子，演示如何声明一个`@interface`正确的注释及代码空格空行编码风格。
 
 ```objectivec 
 // GOOD:
@@ -137,6 +143,8 @@ for an `@interface` declaration.
 An example source file, demonstrating the correct commenting and spacing for the
 `@implementation` of an interface.
 
+实现一个`@implementation` 的正确编码规范示例，展示正确的注释和间距（包括空行，回车，空格等）
+
 ```objectivec 
 // GOOD:
 
@@ -178,11 +186,12 @@ An example source file, demonstrating the correct commenting and spacing for the
 @end
 ```
 
-## Naming 
+
+
+## 命名（Naming）
 
 Names should be as descriptive as possible, within reason. Follow standard
-[Objective-C naming
-rules](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/CodingGuidelines/CodingGuidelines.html).
+[Objective-C naming rules](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/CodingGuidelines/CodingGuidelines.html).
 
 Avoid non-standard abbreviations (including non-standard acronyms and
 initialisms). Don't worry about saving horizontal space as it is far more
@@ -1471,29 +1480,41 @@ int CrossPlatformAPI::DoSomethingPlatformSpecific() {
 Projects may opt to use an 80 column line length limit for consistency with
 Google's C++ style guide.
 
-## Spacing and Formatting 
 
-### Spaces vs. Tabs 
+
+## 空间布局和格式（Spacing and Formatting） 
+
+### 空格 vs 制表符（Spaces vs. Tabs） 
 
 Use only spaces, and indent 2 spaces at a time. We use spaces for indentation.
 Do not use tabs in your code.
 
+只使用空格，缩进量为2个空格宽度。缩进时不使用制表符，只用空格。
+
 You should set your editor to emit spaces when you hit the tab key, and to trim
 trailing spaces on lines.
 
-### Line Length 
+设置编辑器使用空格自动替换制表符，并消除行位空格。
+
+### 行宽（Line Length） 
 
 The maximum line length for Objective-C files is 100 columns.
 
 You can make violations easier to spot by enabling *Preferences > Text Editing >
 Page guide at column: 100* in Xcode.
 
-### Method Declarations and Definitions 
+Objective-C最大行宽为100列（100字符宽度）。在xCode中，通过设置Preferences > Text Editing > Page guide at column:为100，可以轻松检查超宽地方。
+
+### 方法声明与定义（Method Declarations and Definitions） 
 
 One space should be used between the `-` or `+` and the return type, and no
 spacing in the parameter list except between parameters.
 
+`-` or `+` 后与返回值之间须有一个空格，参数名与参数类型间无空格，参数列表不同参数间有一个空格；
+
 Methods should look like this:
+
+方法示例如下：
 
 ```objectivec 
 // GOOD:
@@ -1505,6 +1526,8 @@ Methods should look like this:
 
 The spacing before the asterisk is optional. When adding new code, be consistent
 with the surrounding file's style.
+
+星号前可以有一个空格。新添加的代码要与文件风格保持一致。
 
 If a method declaration does not fit on a single line, put each parameter on its
 own line. All lines except the first should be indented at least four spaces.
@@ -1578,7 +1601,7 @@ conditions:
 *   Function scopes should be indented 2 spaces.
 *   Wrapped parameters should have a 4 space indent.
 
-### Conditionals 
+### 条件判断（Conditionals） 
 
 Include a space after `if`, `while`, `for`, and `switch`, and around comparison
 operators.
